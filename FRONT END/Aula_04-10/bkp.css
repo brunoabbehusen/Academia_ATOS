@@ -1,0 +1,26 @@
+*{
+    box-sizing: border-box;
+}
+
+.container {
+    height: 210px;
+    width: 300px;
+    background-color: blue;
+    border-radius: 12px;
+}
+
+.elemento {
+    display: flex;
+    width: 100px;
+    height: 55px;
+    background-color: red;
+    text-align: center;
+    font-weight: bold;
+    background-clip: content-box;
+    padding: 10px;
+    line-height: 35px;
+    align-content: center;
+    flex-direction: column-reverse;
+}
+
+
