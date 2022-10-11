@@ -1,4 +1,4 @@
-package Metodos_atv3;
+package Metodos.Atv_3;
 public class Moto {
     
     String marca;

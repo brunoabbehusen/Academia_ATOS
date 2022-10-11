@@ -1,4 +1,4 @@
-package Construtor.Atv1.Atv2;
+package Construtor.Atv2;
 
 public class Aluno {
     
