@@ -8,6 +8,7 @@
     align-items: flex-end;
     flex-direction: column-reverse;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .elemento {
@@ -17,5 +18,4 @@
     background-color: red;
     margin: 0px;
     text-align: center;
-    
 }
