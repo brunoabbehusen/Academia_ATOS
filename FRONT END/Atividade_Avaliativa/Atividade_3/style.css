@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+}
+
+h1{
+    text-align: center;
+    color: rgb(202, 202, 204);
+    padding-top: 20px;
+}
+
+h3{
+
+    text-align: center;
+    color: gold;
+    padding: auto;
+}
+
