@@ -70,9 +70,17 @@
 h1{
 	margin:.5em 0;
 	font-size:60px;
-	font-weight:50;
+	font-weight:50px;
 	text-transform:uppercase;
 	letter-spacing:-.05em;
+}
+
+h2{
+	padding-top: 10px;
+	font-size: 40px;
+	font-weight:1px;
+	text-transform:uppercase;
+	letter-spacing: 10px;
 }
 
 body{

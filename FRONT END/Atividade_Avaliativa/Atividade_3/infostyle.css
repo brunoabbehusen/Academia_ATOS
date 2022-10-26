@@ -6,6 +6,20 @@
     font-family: 'Titillium Web', sans-serif;
 }
 
+:root{
+	--nao-metal:rgb(237, 243, 221);
+	--gas-nobre:rgb(194, 69, 38);
+	--metal-alcalino:rgb(180, 100, 245);
+	--metal-alcalino-terroso:rgb(35, 101, 245);
+	--semimetal:rgb(200, 110, 110);
+	--halogenio:rgb(238, 170, 255);
+	--outros-metais:rgb(40, 112, 112);
+	--metal-transicao:rgb(35, 190, 35);
+	--lantanideo:rgb(229, 233, 10);
+	--actinidio:rgb(255, 0, 191);
+	--bg:rgb(29, 31, 41);
+}
+
 table {
     min-width: 800px;
     margin: 30px auto;
@@ -25,7 +39,7 @@ caption span {
 }
 
 thead {
-    background-color: rgb(29,31,41);
+    background-color: var(--bg);
     color: yellow;
     position: sticky;
     top: 0;
@@ -46,10 +60,10 @@ tbody{
     margin-top:51px;
 }
 
-tbody tr:hover {
+/*tbody tr:hover {
     background-color: #6c8026;
     color: white;
-}
+}*/
 
 tbody tr:last-of-type {
     border-bottom: solid 2px #e10600;
@@ -57,4 +71,54 @@ tbody tr:last-of-type {
 
 tfoot {
     display: none;
+}
+
+.nao-metal:hover{
+    background-color: black;
+    color: var(--nao-metal);
+}
+
+.gas-nobre:hover{
+    background-color: black;
+    color: var(--gas-nobre);
+}
+
+.metal-alcalino:hover{
+    background-color: black;
+    color: var(--metal-alcalino);
+}
+
+.metal-alcalino-terroso:hover{
+    background-color: black;
+    color:var(--metal-alcalino-terroso);
+}
+
+.semi-metal:hover{
+    background-color: black;
+    color: var(--semimetal);
+}
+
+.halogenio:hover{
+    background-color:black;
+    color: var(--halogenio);
+}
+
+.outros-metais:hover{
+    background-color: black;
+    color: var(--outros-metais);
+}
+
+.metal-transicao:hover{
+    background-color: black;
+    color:var(--metal-transicao);
+}
+
+.lantanideo:hover{
+    background-color: black;
+    color: var(--lantanideo);
+}
+
+.actinidio:hover{
+    background-color: black;
+    color: var(--actinidio);
 }
