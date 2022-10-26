@@ -9,7 +9,7 @@
 	box-sizing:border-box;	
 }
 
-:root{ /*A pseudo-classe CSS :root se equipara à raiz de uma árvore, que por sua vez representa o documento.*/
+:root{
 	--nao-metal:rgb(237, 243, 221);
 	--gas-nobre:rgb(194, 69, 38);
 	--metal-alcalino:rgb(180, 100, 245);
@@ -21,14 +21,6 @@
 	--lantanideo:rgb(229, 233, 10);
 	--actinidio:rgb(255, 0, 191);
 	--bg:rgb(29, 31, 41);
-}
-
-body{
-	font:1em/1 'Nunito', sans-serif;
-	color:rgb(255,255,255);
-	text-align:center;
-	padding:1em 5%;
-	background:var(--bg);
 }
 
 /* VARIAVEIS DE CORES DE PRIMEIRO PLANO */
@@ -81,6 +73,14 @@ h1{
 	font-weight:50;
 	text-transform:uppercase;
 	letter-spacing:-.05em;
+}
+
+body{
+	font:1em/1 'Nunito', sans-serif;
+	color:rgb(255,255,255);
+	text-align:center;
+	padding:1em 5%;
+	background:var(--bg);
 }
 
 .elemento{
@@ -197,9 +197,9 @@ li:before{
 		}
 		
 		#grid-container{
-			display:grid; /* Exibe em forma de celula de grade */
-			grid-template-columns:repeat(18, 7em); /* Representa um fragmento repetido da lista de faixas */
-			grid-gap:.25em;	/* Espaçamento entre as celulas de grade */
+			display:grid;
+			grid-template-columns:repeat(18, 7em);
+			grid-gap:.25em;	
 		}
 			
 		.col-span16{
@@ -226,7 +226,7 @@ li:before{
 			margin:0;
 		}
 			
-		section:hover{ /* Efeito de sobresaltar */
+		section:hover{
 			transition:.2s;
 			transform:scale(1.6);
 			cursor:pointer;
