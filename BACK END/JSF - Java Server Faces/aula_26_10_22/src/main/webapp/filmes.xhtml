@@ -1,0 +1,109 @@
+<!DOCTYPE HTML>
+<HTML lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<ui:composition template="/WEB-INF/template/template.xhtml">
+  <ui:define name="content">
+    <h:body class="dark-edition">
+      <div class="wrapper ">
+        <div class="main-panel">
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="card card-stats">
+                    <div class="card-header card-header-warning card-header-icon">
+                      <div class="card-icon">
+                        <i class="material-icons">movie</i>
+                      </div>
+                      <p class="card-category">Total de Filmes</p>
+                      <h3 class="card-title">#{filmeBean.totalDeFilmes()}</h3>
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6">
+                  <div class="card card-stats">
+                    <div class="card-header card-header-success card-header-icon">
+                      <div class="card-icon">
+                        <i class="material-icons">store</i>
+                      </div>
+                      <p class="card-category">Média de Preço</p>
+                      <h3 class="card-title">R$#{filmeBean.precoMedioLocacao()}</h3>
+                    </div>
+                    <div class="card-footer">
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ui:fragment rendered="${filmeBean.totalDeFilmes() == 0}">
+                <h3>Nenhum filme cadastrado</h3>
+              </ui:fragment>
+              <ui:fragment rendered="${filmeBean.totalDeFilmes() > 0}">
+                  <div class="row">
+                    <div class="col-lg-12 col-md-12">
+                      <div class="card">
+                        <div class="card-header card-header-primary">
+                          <h4 class="card-title">Lista de Filmes</h4>
+                        </div>
+                        <div class="card-body table-responsive">
+                          <h:form id="formFilme">
+                            <h:dataTable id="tabelaFilmes" binding="#{table}" value="#{filmeBean.dataModel}" var="filme" styleClass="table table-hover">
+                              <h:column>
+                                <f:facet name="header" class="text-warning">#</f:facet>
+                                <h:outputText value="#{filme.id}"></h:outputText>
+                              </h:column>
+                              <h:column>
+                                <f:facet name="header" class="text-warning">Título</f:facet>
+                                <h:outputText value="#{filme.titulo}"></h:outputText>
+                              </h:column>
+                              <h:column>
+                                <f:facet name="header" class="text-warning">Descrição</f:facet>
+                                <h:outputText value="#{filme.descricao}"></h:outputText>
+                              </h:column>
+                              <h:column>
+                                <f:facet name="header" class="text-warning">Ano de Lançamento</f:facet>
+                                <h:outputText value="#{filme.anoLancamento}"></h:outputText>
+                              </h:column>
+                              <h:column>
+                                <f:facet name="header" class="text-warning">Valor de Locação</f:facet>
+                                <h:outputText value="R$#{filme.custoAluguel}"></h:outputText>
+                              </h:column>
+
+                              <h:column>
+                                <f:facet name="header">Ações</f:facet>
+                                <h:commandLink  action="#{filmeBean.editar(filme.id)}" styleClass="btn btn-primary">
+                                  <i class="bi bi-pen-fill"></i>
+                                </h:commandLink>
+                                <h:commandLink action="#{filmeBean.deletar(filme.id)}" styleClass="btn btn-danger">
+                                  <i class="bi bi-trash2-fill"></i>
+                                </h:commandLink>
+                              </h:column>
+                            </h:dataTable>
+                            <h:panelGroup rendered="#{filmeBean.dataModel.rowCount > 0}">
+                              <div>
+                                <h:outputText value="#{filmeBean.pagination.pageFirstItem + 1}..#{filmeBean.pagination.pageLastItem + 1}/#{filmeBean.pagination.itemsCount}"/>
+                              </div>
+                              <div>
+                                <h:commandLink action="#{filmeBean.previous}" value="Página Anterior" rendered="#{filmeBean.pagination.hasPreviousPage}"/>
+                              </div>
+                              <div>
+                                <h:commandLink action="#{filmeBean.next}" value="Próxima Página" rendered="#{filmeBean.pagination.hasNextPage}"/>
+                              </div>
+                            </h:panelGroup>
+                          </h:form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </ui:fragment>
+            </div>
+          </div>
+        </div>
+      </div>
+    </h:body>
+  </ui:define>
+</ui:composition>
+</HTML>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <head>
+        <link rel="apple-touch-icon"  href="resources/img/apple-icon.png"/>
+        <link rel="icon" type="image/png" href="resources/img/favicon.png"/>
+        <meta  http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>
+            VideoLocadora Facelets
+        </title>
+        <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+        <!--     Fonts and icons     -->
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css"/>
+        <!-- CSS Files -->
+        <link href="resources/css/material-dashboard.css?v=2.1.0" rel="stylesheet" />
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top " id="navigation-example">
+            <div class="container-fluid">
+                <div class="navbar-wrapper" style="margin-top: -10px">
+                    <img alt="" src="resources/img/logo.png" style="width: 100%; margin-bottom: 10px"/>
+                </div>
+                <ui:fragment rendered="#{request.requestURL == 'http://localhost:8080/java_server_faces_war_exploded/filmes.xhtml'}">
+                    <div class="collapse navbar-collapse justify-content-end">
+                        <ul class="navbar-nav" style="margin-rigth: 5px;">
+                            <h:button outcome="cadastrarFilme.xhtml" type="button" class="btn btn-primary" value="Adicionar"> </h:button>
+                        </ul>
+                        <ul class="navbar-nav" style="margin-left: 5px;">
+                            <h:button outcome="index.xhtml" type="button" class="btn btn-default" value="Voltar"> </h:button>
+                        </ul>
+                    </div>
+                </ui:fragment>
+            </div>
+        </nav>
+        <!-- End Navbar -->
+    </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE HTML>
+<HTML lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+<ui:composition template="/WEB-INF/template/template.xhtml">
+  <ui:define name="content">
+    <h:body class="dark-edition">
+      <div class="wrapper">
+        <div class="main-panel">
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header card-header-primary">
+                      <h3 class="card-title">Cadastrar Filme</h3>
+                    </div>
+                    <div class="card-body">
+                      <h:form id="form">
+                        <div class="row">
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">TÍTULO</label>
+                              <h:inputText type="text" value="#{filmeBean.titulo}" class="form-control" required="true"/>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">DESCRIÇÃO</label>
+                              <h:inputText type="text" value="#{filmeBean.descricao}" class="form-control"/>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">ANO DE LANÇAMENTO</label>
+                              <h:inputText type="text" value="#{filmeBean.anoLancamento}" class="form-control"/>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">TEMPO MÁXIMO DE LOCAÇÃO (dias)</label>
+                              <h:inputText type="number" value="#{filmeBean.duracaoAluguel}" class="form-control" required="true"/>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">PREÇO DE LOCAÇÃO (R$)</label>
+                              <h:inputText value="#{filmeBean.custoAluguel}" class="form-control" required="true"/>
+                            </div>
+                          </div>
+                          <div class="col-md-3">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">PREÇO DE REPOSIÇÃO (R$)</label>
+                              <h:inputText value="#{filmeBean.precoReposicao}" class="form-control"  required="true"/>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">DURAÇÃO DO FILME (minutos)</label>
+                              <h:inputText value="#{filmeBean.duracao}" class="form-control"/>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">CLASSIFICAÇÃO</label>
+                              <h:selectOneMenu value = "#{filmeBean.classificacao}" class="bg-dark text-center form-control">
+                                <f:selectItem itemValue = "G" itemLabel = "G" />
+                                <f:selectItem itemValue = "PG" itemLabel = "PG" />
+                                <f:selectItem itemValue = "PG-13" itemLabel = "PG-13" />
+                                <f:selectItem itemValue = "R" itemLabel = "R" />
+                                <f:selectItem itemValue = "NC-17" itemLabel = "NC-17" />
+                              </h:selectOneMenu>
+                            </div>
+                          </div>
+                          <div class="col-md-12">
+                            <div class="form-group">
+                              <label class="bmd-label-floating">CONTEÚDO ESPECIAL</label>
+                              <h:selectManyCheckbox value = "#{filmeBean.conteudoEspecial}" class="form-control">
+                                <f:selectItem itemValue = "Trailers" itemLabel = " Trailers" />
+                                <f:selectItem itemValue = "Comentários" itemLabel = " Comentários" />
+                                <f:selectItem itemValue = "Cenas deletadas" itemLabel = " Cenas Deletadas" />
+                                <f:selectItem itemValue = "Por trás das cenas" itemLabel = " Por trás das cenas" />
+                              </h:selectManyCheckbox>
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="form-group" style="display: flex">
+                              <div class="col-sm-3">
+                                <h:commandButton value="Salvar" action="#{filmeBean.salvar(filmeBean)}" class="btn btn-primary" />
+                              </div>
+                              <div class="col-sm-3">
+                                <h:button outcome="filmes.xhtml" type="button" class="btn btn-danger" value="Cancelar"></h:button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </h:form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </h:body>
+  </ui:define>
+</ui:composition>
+</HTML>
