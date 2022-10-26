@@ -7,8 +7,889 @@
     <link rel="stylesheet" href="./style.css">
     <title>Tabela Periodica</title>
 </head>
-<body>
-    <h1>Tabela Periodica</h1>
-    <h3>EM CONSTRUÇÃO</h3>
-</body>
+<div class="master"> <!-- O elemento <main> define o conteúdo principal dentro do <body> -->
+    <body>
+        <h1>Tabela Periodica</h1>
+        <h1>ATOS Academy</h1>
+        
+        <div id ="grid-container">
+
+            <!-- LINHA 1 -->
+            <section class="nao-metal" onclick="window.location.href='./info.html'">
+                <span>1</span>
+                <div class="elemento">H</div class="elemento">
+                <p>Hidrogênio</p>
+                <p>1008</p>
+            </section>
+
+            <!-- Esconder as linhas vazias -->
+            <section class="col-hidden col-span16"></section>
+
+            <section class="gas-nobre" onclick="window.location.href='./info.html#1'">
+                <span>2</span>
+                <div class="elemento">He</div>
+                <p>Hélio</p>
+                <p>4,0026</p>   
+            </section>
+
+            <!-- LINHA 2 -->
+            <section class="metal-alcalino" onclick="window.location.href='./info.html#2'">
+                <span>3</span>
+                <div class="elemento">Li</div class="elemento">
+                <p>Lítio</p>
+                <p>6,64</p>
+            </section>
+
+            <section class="metal-alcalino-terroso" onclick="window.location.href='./info.html#3'">
+                <span>4</span>
+                <div class="elemento">Be</div class="elemento">
+                <p>Berílio</p>
+                <p>9,90122</p>
+            </section>
+
+            <!-- Esconder as linhas vazias -->
+            <section class="col-hidden col-span10"></section>
+
+            <section class="semimetal" onclick="window.location.href='./info.html#4'">
+                <span>5</span>
+                <div class="elemento">B</div class="elemento">
+                <p>Boro</p>
+                <p>10,81</p>
+            </section>
+
+            <section class="nao-metal" onclick="window.location.href='./info.html#5'">
+                <span>6</span>
+                <div class="elemento">C</div class="elemento">
+                <p>Carbono</p>
+                <p>12,011</p>
+            </section>
+
+            <section class="nao-metal" onclick="window.location.href='./info.html#6'">
+                <span>7</span>
+                <div class="elemento">N</div class="elemento">
+                <p>Nitrogênio</p>
+                <p>14,007</p>
+            </section>
+
+            <section class="nao-metal" onclick="window.location.href='./info.html#7'">
+                <span>8</span>
+                <div class="elemento">O</div class="elemento" onclick="window.location.href='./info.html#8'">
+                <p>Oxigênio</p>
+                <p>15,999</p>
+            </section>
+
+            <section class="halogenio" onclick="window.location.href='./info.html#8'">
+                <span>9</span>
+                <div class="elemento">F</div class="elemento">
+                <p>Flúor</p>
+                <p>18,998</p>
+            </section>
+
+            <section class="gas-nobre" onclick="window.location.href='./info.html#9'">
+                <span>10</span>
+                <div class="elemento">Ne</div class="elemento">
+                <p>Neônio</p>
+                <p>20,180</p>
+            </section>
+
+            <!-- LINHA 3 -->
+            <section class="metal-alcalino" onclick="window.location.href='./info.html#10'">
+                <span>11</span>
+                <div class="elemento">Na</div class="elemento">
+                <p>Sódio</p>
+                <p>22,990</p>
+            </section>
+
+            <section class="metal-alcalino-terroso" onclick="window.location.href='./info.html#11'">
+                <span>12</span>
+                <div class="elemento">Mg</div class="elemento">
+                <p>Magnésio</p>
+                <p>24,305</p>
+            </section>
+
+            <!-- Esconder as linhas vazias -->
+            <section class="col-hidden col-span10"></section>
+
+            <section class="outros-metais" onclick="window.location.href='./info.html#12'">
+                <span>13</span>
+                <div class="elemento">Al</div class="elemento">
+                <p>Alumínio</p>
+                <p>26,982</p>
+            </section>
+
+            <section class="semimetal" onclick="window.location.href='./info.html#13'">
+                <span>14</span>
+                <div class="elemento">Si</div class="elemento">
+                <p>Silício</p>
+                <p>28,085</p>
+            </section>
+
+            <section class="nao-metal" onclick="window.location.href='./info.html#14'">
+                <span>15</span>
+                <div class="elemento">P</div class="elemento">
+                <p>Fósforo</p>
+                <p>30,974</p>
+            </section>
+
+            <section class="nao-metal" onclick="window.location.href='./info.html#15'">
+                <span>16</span>
+                <div class="elemento">S</div class="elemento">
+                <p>Enxofre</p>
+                <p>32,06</p>
+            </section>
+        
+            <section class="halogenio" onclick="window.location.href='./info.html#16'">
+                <span>17</span>
+                <div class="elemento">Cl</div class="elemento">
+                <p>Cloro</p>
+                <p>35,45</p>
+            </section>
+        
+            <section class="gas-nobre" onclick="window.location.href='./info.html#17'">
+                <span>18</span>
+                <div class="elemento">Ar</div class="elemento">
+                <p>Argônio</p>
+                <p>39,948</p>
+            </section>
+        
+            <!-- LINHA 4 -->
+            <section class="metal-alcalino" onclick="window.location.href='./info.html#18'">
+                <span>19</span>
+                <div class="elemento">K</div class="elemento">
+                <p>Potássio</p>
+                <p>39,098</p>
+            </section>
+        
+            <section class="metal-alcalino-terroso" onclick="window.location.href='./info.html#19'">
+                <span>20</span>
+                <div class="elemento">Ca</div class="elemento">
+                <p>Cálcio</p>
+                <p>40,078(4)</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#20'">
+                <span>21</span>
+                <div class="elemento">Sc</div class="elemento">
+                <p>Escândio</p>
+                <p>44,956</p>
+            </section>
+
+            <section class="metal-transicao" onclick="window.location.href='./info.html#21'">
+                <span>22</span>
+                <div class="elemento">Ti</div class="elemento">
+                <p>Titânio</p>
+                <p>47,867</p>
+            </section>
+
+            <section class="metal-transicao" onclick="window.location.href='./info.html#22'">
+                <span>23</span>
+                <div class="elemento">V</div class="elemento">
+                <p>Vanádio</p>
+                <p>50,942</p>
+            </section>
+
+            <section class="metal-transicao" onclick="window.location.href='./info.html#23'">
+                <span>24</span>
+                <div class="elemento">Cr</div class="elemento">
+                <p>Crômio</p>
+                <p>51,996</p>
+            </section>
+
+            <section class="metal-transicao" onclick="window.location.href='./info.html#24'">
+                <span>25</span>
+                <div class="elemento">Mn</div class="elemento">
+                <p>Manganês</p>
+                <p>54,938</p>
+            </section>
+
+            <section class="metal-transicao" onclick="window.location.href='./info.html#25'">
+                <span>26</span>
+                <div class="elemento">Fe</div class="elemento">
+                <p>Ferro</p>
+                <p>55,845(2)</p>
+            </section>
+
+            <section class="metal-transicao" onclick="window.location.href='./info.html#26'">
+                <span>27</span>
+                <div class="elemento">Co</div class="elemento">
+                <p>Cobalto</p>
+                <p>58,933</p>
+            </section>
+
+            <section class="metal-transicao" onclick="window.location.href='./info.html#27'">
+                <span>28</span>
+                <div class="elemento">Ni</div class="elemento">
+                <p>Níquel</p>
+                <p>58,693</p>
+            </section>
+
+            <section class="metal-transicao" onclick="window.location.href='./info.html#28'">
+                <span>29</span>
+                <div class="elemento">Cu</div class="elemento">
+                <p>Cobre</p>
+                <p>63,546(3)</p>
+            </section>
+
+            <section class="metal-transicao" onclick="window.location.href='./info.html#29'">
+                <span>30</span>
+                <div class="elemento">Zn</div class="elemento">
+                <p>Zinco</p>
+                <p>65,38(2)</p>
+            </section>
+
+            <section class="outros-metais" onclick="window.location.href='./info.html#30'">
+                <span>31</span>
+                <div class="elemento">Ga</div class="elemento">
+                <p>Gálio</p>
+                <p>69,723</p>
+            </section>
+
+            <section class="semimetal" onclick="window.location.href='./info.html#31'">
+                <span>32</span>
+                <div class="elemento">Ge</div class="elemento">
+                <p>Germânio</p>
+                <p>72,630(8)</p>
+            </section>
+
+            <section class="semimetal" onclick="window.location.href='./info.html#32'">
+                <span>33</span>
+                <div class="elemento">As</div class="elemento">
+                <p>Arsênio</p>
+                <p>74,922</p>
+            </section>
+
+            <section class="nao-metal" onclick="window.location.href='./info.html#33'">
+                <span>34</span>
+                <div class="elemento">Se</div class="elemento">
+                <p>Selênio</p>
+                <p>78,971(8)</p>
+            </section>
+
+            <section class="halogenio" onclick="window.location.href='./info.html#34'">
+                <span>35</span>
+                <div class="elemento">Br</div class="elemento">
+                <p>Bromo</p>
+                <p>79,904</p>
+            </section>
+
+            <section class="gas-nobre" onclick="window.location.href='./info.html#35'">
+                <span>36</span>
+                <div class="elemento">Kr</div class="elemento">
+                <p>Criptônio</p>
+                <p>83,798(2)</p>
+            </section>
+
+            <!-- LINHA 5 -->
+            <section class="metal-alcalino" onclick="window.location.href='./info.html#36'">
+                <span>37</span>
+                <div class="elemento">Rb</div class="elemento">
+                <p>Rubídio</p>
+                <p>85,468</p>
+            </section>
+
+            <section class="metal-alcalino-terroso" onclick="window.location.href='./info.html#37'">
+                <span>38</span>
+                <div class="elemento">Sr</div class="elemento">
+                <p>Estrôncio</p>
+                <p>87,62</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#38'">
+                <span>39</span>
+                <div class="elemento">Y</div class="elemento">
+                <p>Ítrio</p>
+                <p>88,906</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#39'">
+                <span>40</span>
+                <div class="elemento">Zr</div class="elemento">
+                <p>Zircônio</p>
+                <p>91,224(2)</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#40'">
+                <span>41</span>
+                <div class="elemento">Nb</div class="elemento">
+                <p>Nióbio</p>
+                <p>92,906</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#41'">
+                <span>42</span>
+                <div class="elemento">Mo</div class="elemento">
+                <p>Molibdênio</p>
+                <p>95,95</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#42'">
+                <span>43</span>
+                <div class="elemento">Tc</div class="elemento">
+                <p>Tecnécio</p>
+                <p>[98]</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#43'">
+                <span>44</span>
+                <div class="elemento">Ru</div class="elemento">
+                <p>Rutênio</p>
+                <p>101,07(2)</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#44'">
+                <span>45</span>
+                <div class="elemento">Rh</div class="elemento">
+                <p>Ródio</p>
+                <p>102,91</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#45'">
+                <span>46</span>
+                <div class="elemento">Pd</div class="elemento">
+                <p>Paládio</p>
+                <p>106,42</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#46'">
+                <span>47</span>
+                <div class="elemento">Ag</div class="elemento">
+                <p>Prata</p>
+                <p>107,87</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#47'">
+                <span>48</span>
+                <div class="elemento">Cd</div class="elemento">
+                <p>Cádmio</p>
+                <p>112,41</p>
+            </section>
+        
+            <section class="outros-metais" onclick="window.location.href='./info.html#48'">
+                <span>49</span>
+                <div class="elemento">In</div class="elemento">
+                <p>Índio</p>
+                <p>114,82</p>
+            </section>
+        
+            <section class="outros-metais" onclick="window.location.href='./info.html#49'">
+                <span>50</span>
+                <div class="elemento">Sn</div class="elemento">
+                <p>Estanho</p>
+                <p>118,71</p>
+            </section>
+        
+            <section class="semimetal" onclick="window.location.href='./info.html#50'">
+                <span>51</span>
+                <div class="elemento">Sb</div class="elemento">
+                <p>Antimônio</p>
+                <p>121,76</p>
+            </section>
+        
+            <section class="semimetal" onclick="window.location.href='./info.html#51'">
+                <span>52</span>
+                <div class="elemento">Te</div class="elemento">
+                <p>Telúrio</p>
+                <p>127,60(3)</p>
+            </section>
+        
+            <section class="halogenio" onclick="window.location.href='./info.html#52'">
+                <span>53</span>
+                <div class="elemento">I</div class="elemento">
+                <p>Iodo</p>
+                <p>126,90</p>
+            </section>
+        
+            <section class="gas-nobre" onclick="window.location.href='./info.html#53'">
+                <span>54</span>
+                <div class="elemento">Xe</div class="elemento">
+                <p>Xenônio</p>
+                <p>131,29</p>
+            </section>
+
+            <!-- LINHA 6 -->
+            <section class="metal-alcalino" onclick="window.location.href='./info.html#54'">
+                <span>55</span>
+                <div class="elemento">Cs</div class="elemento">
+                <p>Césio</p>
+                <p>132,91</p>
+            </section>
+    
+            <section class="metal-alcalino-terroso" onclick="window.location.href='./info.html#55'">
+                <span>56</span>
+                <div class="elemento">Ba</div class="elemento">
+                <p>Bário</p>
+                <p>137,33</p>
+            </section>
+    
+            <section class="lantanideo" onclick="window.location.href='./info.html#56'">
+                <span>57 - 71</span>
+                <div class="elemento">* *</div class="elemento">
+            </section>
+    
+            <section class="metal-transicao" onclick="window.location.href='./info.html#71'">
+                <span>72</span>
+                <div class="elemento">Hf</div class="elemento">
+                <p>Háfnio</p>
+                <p>178,49(2)</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#72'">
+                <span>73</span>
+                <div class="elemento">Ta</div class="elemento">
+                <p>Tântalo</p>
+                <p>180,95</p>
+            </section>
+    
+            <section class="metal-transicao" onclick="window.location.href='./info.html#73'">
+                <span>74</span>
+                <div class="elemento">W</div class="elemento">
+                <p>Tungstênio</p>
+                <p>183,84</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#74'">
+                <span>75</span>
+                <div class="elemento">Re</div class="elemento">
+                <p>Rênio</p>
+                <p>186,21</p>
+            </section>
+    
+            <section class="metal-transicao" onclick="window.location.href='./info.html#75'">
+                <span>76</span>
+                <div class="elemento">Os</div class="elemento">
+                <p>Ósmio</p>
+                <p>190,23(3)</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#76'">
+                <span>77</span>
+                <div class="elemento">Ir</div class="elemento">
+                <p>Irídio</p>
+                <p>192,22</p>
+            </section>
+    
+            <section class="metal-transicao" onclick="window.location.href='./info.html#77'">
+                <span>78</span>
+                <div class="elemento">Pt</div class="elemento">
+                <p>Platina</p>
+                <p>195,08</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#78'">
+                <span>79</span>
+                <div class="elemento">Au</div class="elemento">
+                <p>Ouro</p>
+                <p>196,97</p>
+            </section>
+    
+            <section class="metal-transicao" onclick="window.location.href='./info.html#79'">
+                <span>80</span>
+                <div class="elemento">Hg</div class="elemento">
+                <p>Mercúrio</p>
+                <p>200,59</p>
+            </section>
+    
+            <section class="outros-metais" onclick="window.location.href='./info.html#80'">
+                <span>81</span>
+                <div class="elemento">Tl</div class="elemento">
+                <p>Tálio</p>
+                <p>204,38</p>
+            </section>
+    
+            <section class="outros-metais" onclick="window.location.href='./info.html#81'">
+                <span>82</span>
+                <div class="elemento">Pb</div class="elemento">
+                <p>Chumbo</p>
+                <p>207,2</p>
+            </section>
+    
+            <section class="outros-metais" onclick="window.location.href='./info.html#82'">
+                <span>83</span>
+                <div class="elemento">Bi</div class="elemento">
+                <p>Bismuto</p>
+                <p>208,98</p>
+            </section>
+        
+            <section class="semimetal" onclick="window.location.href='./info.html#83'">
+                <span>84</span>
+                <div class="elemento">Po</div class="elemento">
+                <p>Polônio</p>
+                <p>[209]</p>
+            </section>
+        
+            <section class="halogenio" onclick="window.location.href='./info.html#84'">
+                <span>85</span>
+                <div class="elemento">At</div class="elemento">
+                <p>Aslato</p>
+                <p>[210]</p>
+            </section>
+        
+            <section class="gas-nobre" onclick="window.location.href='./info.html#85'">
+                <span>86</span>
+                <div class="elemento">Rn</div class="elemento">
+                <p>Randônio</p>
+                <p>[222]</p>
+            </section>
+
+            <!-- LINHA 7 -->
+            <section class="metal-alcalino" onclick="window.location.href='./info.html#86'">
+                <span>87</span>
+                <div class="elemento">Fr</div class="elemento">
+                <p>Frâncio</p>
+                <p>[223]</p>
+            </section>
+        
+            <section class="metal-alcalino-terroso" onclick="window.location.href='./info.html#87'">
+                <span>88</span>
+                <div class="elemento">Ra</div class="elemento">
+                <p>Rádio</p>
+                <p>[226]</p>
+            </section>
+    
+            <section class="actinidio" onclick="window.location.href='./info.html#88'">
+                <span>89 - 103</span>
+                <div class="elemento">* *</div class="elemento">
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#103'">
+                <span>104</span>
+                <div class="elemento">Rf</div class="elemento">
+                <p>Rutherfórdio</p>
+                <p>[267]</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#104'">
+                <span>105</span>
+                <div class="elemento">Db</div class="elemento">
+                <p>Dúbnio</p>
+                <p>[268]</p>
+            </section>
+    
+            <section class="metal-transicao" onclick="window.location.href='./info.html#105'">
+                <span>106</span>
+                <div class="elemento">Sg</div class="elemento">
+                <p>Seabórgio</p>
+                <p>[269]</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#106'">
+                <span>107</span>
+                <div class="elemento">Bh</div class="elemento">
+                <p>Bóhrio</p>
+                <p>[270]</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#107'">
+                <span>108</span>
+                <div class="elemento">Hs</div class="elemento">
+                <p>Hássio</p>
+                <p>[269]</p>
+            </section>
+    
+            <section class="metal-transicao" onclick="window.location.href='./info.html#108'">
+                <span>109</span>
+                <div class="elemento">Mt</div class="elemento">
+                <p>Meitnério</p>
+                <p>[268]</p>
+            </section>
+        
+            <section class="metal-transicao" onclick="window.location.href='./info.html#109'">
+                <span>110</span>
+                <div class="elemento">Ds</div class="elemento">
+                <p>Darmstádtio</p>
+                <p>[281]</p>
+            </section>
+    
+            <section class="metal-transicao" onclick="window.location.href='./info.html#110'">
+                <span>111</span>
+                <div class="elemento">Rg</div class="elemento">
+                <p>Roentgênio</p>
+                <p>[281]</p>
+            </section>
+    
+            <section class="metal-transicao" onclick="window.location.href='./info.html#111'">
+                <span>112</span>
+                <div class="elemento">Cn</div class="elemento">
+                <p>Copernício</p>
+                <p>[285]</p>
+            </section>
+        
+            <section class="outros-metais" onclick="window.location.href='./info.html#112'">
+                <span>113</span>
+                <div class="elemento">Nh</div class="elemento">
+                <p>Nihônio</p>
+                <p>[286]</p>
+            </section>
+    
+            <section class="outros-metais" onclick="window.location.href='./info.html#113'">
+                <span>114</span>
+                <div class="elemento">Fl</div class="elemento">
+                <p>Felóvio</p>
+                <p>[289]</p>
+            </section>
+    
+            <section class="outros-metais" onclick="window.location.href='./info.html#114'">
+                <span>115</span>
+                <div class="elemento">MC</div class="elemento">
+                <p>Moscóvio</p>
+                <p>[288]</p>
+            </section>
+        
+            <section class="outros-metais" onclick="window.location.href='./info.html#115'">
+                <span>116</span>
+                <div class="elemento">Lv</div class="elemento">
+                <p>Livermório</p>
+                <p>[293]</p>
+            </section>
+        
+            <section class="halogenio" onclick="window.location.href='./info.html#116'">
+                <span>117</span>
+                <div class="elemento">Ts</div class="elemento">
+                <p>Tenessino</p>
+                <p>[294]</p>
+            </section>
+    
+            <section class="gas-nobre" onclick="window.location.href='./info.html#117'">
+                <span>118</span>
+                <div class="elemento">Og</div class="elemento">
+                <p>Oganessônio</p>
+                <p>[294]</p>
+            </section>
+
+            <!-- LINHA 8 -->
+            <!-- Esconder as linhas vazias -->
+            <section class="col-hidden col-span3"></section>
+            
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#56'">
+                <span>57</span>
+                <div class="elemento">La</div class="elemento">
+                <p>Lantânio</p>
+                <p>138,91</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#57'">
+                <span>58</span>
+                <div class="elemento">Ce</div class="elemento">
+                <p>Cério</p>
+                <p>140,12</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#58'">
+                <span>59</span>
+                <div class="elemento">Pr</div class="elemento">
+                <p>Praseodímio</p>
+                <p>140,91</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#59'">
+                <span>60</span>
+                <div class="elemento">Nd</div class="elemento">
+                <p>Neodímio</p>
+                <p>144,24</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#60'">
+                <span>61</span>
+                <div class="elemento">Pm</div class="elemento">
+                <p>Promécio</p>
+                <p>[145]</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#61'">
+                <span>62</span>
+                <div class="elemento">Sm</div class="elemento">
+                <p>Samário</p>
+                <p>150,36(2)</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#62'">
+                <span>63</span>
+                <div class="elemento">Eu</div class="elemento">
+                <p>Európio</p>
+                <p>151,96</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#63'">
+                <span>64</span>
+                <div class="elemento">Gd</div class="elemento">
+                <p>Gadolínio</p>
+                <p>157,25(3)</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#64'">
+                <span>65</span>
+                <div class="elemento">Tb</div class="elemento">
+                <p>Térbio</p>
+                <p>158,93</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#65'">
+                <span>66</span>
+                <div class="elemento">Dy</div class="elemento">
+                <p>Disprósio</p>
+                <p>162,50</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#66'">
+                <span>67</span>
+                <div class="elemento">Ho</div class="elemento">
+                <p>Hólmio</p>
+                <p>164,93</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#67'">
+                <span>68</span>
+                <div class="elemento">Er</div class="elemento">
+                <p>Érbio</p>
+                <p>167,26</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#68'">
+                <span>69</span>
+                <div class="elemento">Tm</div class="elemento">
+                <p>Túlio</p>
+                <p>168,93</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#69'">
+                <span>70</span>
+                <div class="elemento">Yb</div class="elemento">
+                <p>Itérbio</p>
+                <p>173,05</p>
+            </section>
+
+            <section class="lantanideo ninerow" onclick="window.location.href='./info.html#70'">
+                <span>71</span>
+                <div class="elemento">Lu</div class="elemento">
+                <p>Lutécio</p>
+                <p>174,97</p>
+            </section>
+
+            <!-- LINHA 9 -->
+            <!-- Esconder as linhas vazias -->
+            <section class="col-hidden col-span3"></section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#88'">
+                <span>89</span>
+                <div class="elemento">Acs</div class="elemento">
+                <p>Actínio</p>
+                <p>[227]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#81'"89>
+                <span>90</span>
+                <div class="elemento">Th</div class="elemento">
+                <p>Thório</p>
+                <p>232,04</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#90'">
+                <span>91</span>
+                <div class="elemento">Pa</div class="elemento">
+                <p>Protactínio</p>
+                <p>231,04</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#91'">
+                <span>92</span>
+                <div class="elemento">U</div class="elemento">
+                <p>Urânio</p>
+                <p>238,03</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#92'">
+                <span>93</span>
+                <div class="elemento">Np</div class="elemento">
+                <p>Netúnio</p>
+                <p>[237]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#93'">
+                <span>94</span>
+                <div class="elemento">Pu</div class="elemento">
+                <p>Plutônio</p>
+                <p>[244]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#94'">
+                <span>95</span>
+                <div class="elemento">Am</div class="elemento">
+                <p>Amerício</p>
+                <p>[243]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#95'">
+                <span>96</span>
+                <div class="elemento">Cm</div class="elemento">
+                <p>Cúrio</p>
+                <p>[247]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#96'">
+                <span>97</span>
+                <div class="elemento">Bk</div class="elemento">
+                <p>Berquélio</p>
+                <p>[247]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#97'">
+                <span>98</span>
+                <div class="elemento">Cf</div class="elemento">
+                <p>Califórnio</p>
+                <p>[251]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#98'">
+                <span>99</span>
+                <div class="elemento">Es</div class="elemento">
+                <p>Einstênio</p>
+                <p>[252]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#99'">
+                <span>100</span>
+                <div class="elemento">Fm</div class="elemento">
+                <p>Férmio</p>
+                <p>[257]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#100'">
+                <span>101</span>
+                <div class="elemento">MD</div class="elemento">
+                <p>Mendelévio</p>
+                <p>[258]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#101'">
+                <span>102</span>
+                <div class="elemento">No</div class="elemento">
+                <p>Nobélio</p>
+                <p>[259]</p>
+            </section>
+
+            <section class="actinidio" onclick="window.location.href='./info.html#102'">
+                <span>103</span>
+                <div class="elemento">Lr</div class="elemento">
+                <p>Laurêncio</p>
+                <p>[262]</p>
+            </section>
+        </div>
+    </body>
+    <!-- FOOTER -->
+    <footer>
+        <ul>
+        <li class="nao-metal">Não Metais</li>
+        <li class="gas-nobre">Gases Nobres</li>
+        <li class="metal-alcalino">Metais Alcalinos</li>
+        <li class="metal-alcalino-terroso">Metais Alcalino-Terrosos</li>
+        <li class="semimetal">Semimetais</li>
+        <li class="halogenio">Halogênios</li>
+        <li class="outros-metais">Outros Metais</li>
+        <li class="metal-transicao">Metais de Transição</li>
+        <li class="lantanideo">Lantanídeos</li>
+        <li class="actinidio">Actinídios</li>
+        </ul>
+    </footer>
+</div>
 </html>

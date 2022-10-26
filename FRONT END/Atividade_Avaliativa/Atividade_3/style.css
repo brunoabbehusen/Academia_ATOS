@@ -1,19 +1,267 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+
+/* GLOBAL STYLES */
 *{
-    margin: 0;
-    padding: 0;
-    background-image: radial-gradient( circle farthest-corner at 10% 20%,  rgba(90,92,106,1) 0%, rgba(32,45,58,1) 81.3% );
+	margin:0;
+	padding:0;
+	list-style:none;
+	box-sizing:border-box;	
 }
 
+:root{ /*A pseudo-classe CSS :root se equipara à raiz de uma árvore, que por sua vez representa o documento.*/
+	--nao-metal:rgb(237, 243, 221);
+	--gas-nobre:rgb(194, 69, 38);
+	--metal-alcalino:rgb(180, 100, 245);
+	--metal-alcalino-terroso:rgb(35, 101, 245);
+	--semimetal:rgb(200, 110, 110);
+	--halogenio:rgb(238, 170, 255);
+	--outros-metais:rgb(40, 112, 112);
+	--metal-transicao:rgb(35, 190, 35);
+	--lantanideo:rgb(229, 233, 10);
+	--actinidio:rgb(255, 0, 191);
+	--bg:rgb(29, 31, 41);
+}
+
+body{
+	font:1em/1 'Nunito', sans-serif;
+	color:rgb(255,255,255);
+	text-align:center;
+	padding:1em 5%;
+	background:var(--bg);
+}
+
+/* VARIAVEIS DE CORES DE PRIMEIRO PLANO */
+.nao-metal{
+	color:var(--nao-metal);
+}
+	
+.gas-nobre{
+	color:var(--gas-nobre);
+}
+
+.metal-alcalino{
+	color:var(--metal-alcalino);
+}
+	
+.metal-alcalino-terroso{
+	color:var(--metal-alcalino-terroso);
+	
+}
+	
+.semimetal{
+	color:var(--semimetal);
+}
+	
+.halogenio{
+	color:var(--halogenio);
+}
+	
+.outros-metais{
+	color:var(--outros-metais);
+}
+	
+.metal-transicao{
+	color:var(--metal-transicao);
+}
+	
+.lantanideo{
+	color:var(--lantanideo);
+}
+	
+.actinidio{
+	color:var(--actinidio);
+}
+
+	
+/* TYPOGRAPHY STYLES */
 h1{
-    text-align: center;
-    color: rgb(202, 202, 204);
-    padding-top: 20px;
+	margin:.5em 0;
+	font-size:60px;
+	font-weight:50;
+	text-transform:uppercase;
+	letter-spacing:-.05em;
 }
 
-h3{
-
-    text-align: center;
-    color: gold;
-    padding: auto;
+.elemento{
+	font-size:20px;
+    padding-top: 1em;
 }
 
+p{
+	padding-top: 1em;
+	font-size:.9em;
+}
+
+p:last-child{
+	font-size:.8em;
+	padding-top: 1em;
+}
+
+.ninerow{
+	margin-top: 5em;
+	margin-bottom: 1em;
+}
+
+
+/* ESTILOS DE GRADE DE CELULA */
+.master{
+	margin:auto;
+	max-width:45em;
+	display:flex;
+}
+
+#grid-container{
+	flex-grow:1;
+	min-width:7em;	
+}
+
+.col-hidden{
+	display:none;	
+}
+
+
+/* GRADE DE CELULA */
+section{
+	height:10em;
+	background:var(--bg);	
+	border:0.30rem solid; 
+	border-radius:.25rem;	
+	line-height:1;
+	margin-bottom:.5em; 
+	position:relative;
+	display:flex;
+	flex-direction:column;
+	justify-content:center;
+}
+
+span{
+	font-size:.75em;
+	position:absolute;
+	top:.3em;
+	left:.5em;	
+}
+
+
+/* FOOTER */
+footer{
+	font-size:.8em;
+	text-align:left;	
+	flex-basis:13.5rem;
+	margin:-.25em 0 0 1em; 
+    padding-top: 1em;
+}
+
+ul{
+	display:flex;
+	flex-wrap:wrap;
+  	position:sticky; 
+  	top:1em;
+}
+
+li{
+	flex-basis:100%;
+	line-height:1.25;
+	margin-bottom:1em;	
+	font-size: 1.2em;
+}
+
+li:before{
+	content:' ';
+	display:inline-block;
+	width:1em;
+	height:1em;
+	border:.125em solid;
+	border-radius:.125rem;	
+	margin-right:.5em;
+	position:relative;
+	top:.25em;
+}
+
+@media only screen and (min-width:92.5em){
+	@supports (display:grid){
+		
+		/* GLOBAL STYLES */
+		
+		body{
+			font-size:.65em;
+			padding:2em;	
+		}
+		
+		
+		/* GRID CONTAINER STYLES */
+	
+		.master{
+			max-width:130.5em;
+			display:block;
+		}
+		
+		#grid-container{
+			display:grid; /* Exibe em forma de celula de grade */
+			grid-template-columns:repeat(18, 7em); /* Representa um fragmento repetido da lista de faixas */
+			grid-gap:.25em;	/* Espaçamento entre as celulas de grade */
+		}
+			
+		.col-span16{
+			grid-column:span 16;
+		}
+			
+		.col-span10{
+			grid-column:span 10;
+		}
+			
+		.col-span3{
+			grid-column:span 3;
+		}
+			
+		.col-hidden{
+			display:block;
+			visibility:hidden;
+		}
+			
+		
+		/* GRID CELL */
+		
+		section{
+			margin:0;
+		}
+			
+		section:hover{ /* Efeito de sobresaltar */
+			transition:.2s;
+			transform:scale(1.6);
+			cursor:pointer;
+			z-index:2;
+		}
+		
+		
+		/* FOOTER */
+	
+		footer{
+			font-size:1em;
+			width:100%;
+			margin:2em 0;
+		}
+		
+		ul{
+			justify-content:center;
+			font-size:10px;
+		}
+		
+		li{
+			flex-basis:auto;
+			margin-bottom:0;	
+		}
+		
+		li + li{
+			margin-left:2em;	
+		}	
+	}
+}
+
+@media only screen and (min-width:102.5em){
+	/* GLOBAL STYLES */
+		
+		body{
+			font-size:.75em;	
+		}	
+}
