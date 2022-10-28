@@ -151,49 +151,59 @@ tfoot {
 .nao-metal:hover{
     background-color: black;
     color: var(--nao-metal);
+    text-transform: uppercase;
 }
 
 .gas-nobre:hover{
     background-color: black;
     color: var(--gas-nobre);
+    text-transform: uppercase;
 }
 
 .metal-alcalino:hover{
     background-color: black;
     color: var(--metal-alcalino);
+    text-transform: uppercase;
 }
 
 .metal-alcalino-terroso:hover{
     background-color: black;
     color:var(--metal-alcalino-terroso);
+    text-transform: uppercase;
 }
 
 .semi-metal:hover{
     background-color: black;
     color: var(--semimetal);
+    text-transform: uppercase;
 }
 
 .halogenio:hover{
     background-color:black;
     color: var(--halogenio);
+    text-transform: uppercase;
 }
 
 .outros-metais:hover{
     background-color: black;
     color: var(--outros-metais);
+    text-transform: uppercase;
 }
 
 .metal-transicao:hover{
     background-color: black;
     color:var(--metal-transicao);
+    text-transform: uppercase;
 }
 
 .lantanideo:hover{
     background-color: black;
     color: var(--lantanideo);
+    text-transform: uppercase;
 }
 
 .actinidio:hover{
     background-color: black;
     color: var(--actinidio);
+    text-transform: uppercase;
 }
