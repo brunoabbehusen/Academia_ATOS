@@ -1,0 +1,30 @@
+Uma empresa de buffets necessita de um sistema para realizar o orçamento de buffets para festas, 
+que varia de acordo com o número de convidados, com o tipo de prato a ser servido, entre outras informações. 
+Para isso, a empresa lhe contratou para desenvolver esse software. 
+
+Os requisitos são:
+
+    - O usuário informa no sistema, por meio de um formulário, o nome do cliente, a quantidade de convidados 
+    da festa e se será servido sobremesa ou não. Assim, o sistema deverá retornar o valor total que o 
+    cliente deverá pagar pelo buffet, obedecendo as seguintes regras:
+   
+    - O valor total é = valor por convidado + taxa de sobremesa + taxa de garçons; o valor por convidado é igual a quantidade de convidados * o valor do prato quente, cujo valor é de R$22,90 por prato.
+    - Caso haja sobremesa, a taxa de sobremesa é 10% do valor total por convidado;
+    - A taxa de garçons depende da quantidade de garçons que serão contratados, que dependerá da quantidade de convidados. É necessário 1 garçom para cada 15 convidados, e cada garçom recebe R$250,00.
+    O sistema deverá calcular a quantidade de garçons de acordo com a quantidade de convidados inserida pelo usuário.
+    
+    - No momento de exibir o resultado, o sistema deverá apresentar as informações em um 
+    layout de uma proposta comercial, contendo os dados da empresa (inventar informações fictícias, 
+    juntamente de uma imagem para a empresa), os dados do cliente, bem como os valores da 
+    proposta (valor total por convidado, taxa de sobremesa, quantidade de garçons e taxa de garçons);
+    
+    - A proposta comercial deve ser salva no banco de dados.
+   
+    - Deverá ser implementada também uma página de consulta, no qual o usuário informa o 
+    nome do cliente e então as informações da proposta comercial a respeito dele devem ser apresentadas na tela.
+    
+    - Deverá ser feita, também, uma página inicial com links para as páginas de cadastro e consulta.
+
+
+Utilizar Servlet ou JSF.
+Utilizar banco de dados.
