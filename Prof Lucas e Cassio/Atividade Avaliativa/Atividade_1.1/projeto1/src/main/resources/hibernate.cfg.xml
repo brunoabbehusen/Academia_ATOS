@@ -1,0 +1,37 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-configuration SYSTEM 
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+   <session-factory>
+   
+      <property name = "hibernate.dialect">
+         org.hibernate.dialect.MySQLDialect
+      </property>
+      
+      <property name = "hibernate.connection.driver_class">
+         com.mysql.jdbc.Driver
+      </property>
+      
+      <!-- Assume test is the database name -->
+      
+      <property name = "hibernate.connection.url">
+         jdbc:mysql://localhost/projetorestaurante
+      </property>
+      
+      <property name = "hibernate.connection.username">
+         root
+      </property>
+      
+      <property name = "hibernate.connection.password">
+         
+      </property>
+      
+      <!-- List of XML mapping files -->
+      <mapping resource = "C:\Users\Abbeh\Documents\Visual Studio Code\ATOS\Academia_ATOS\Prof Lucas e Cassio\Atividade Avaliativa\Atividade_1.1\projeto1\src\main\resources\hibernate.cfg.xml"/>
+	  
+	  <mapping class="projetojava.Cliente" />
+	  <mapping class="projetojava.Orcamento"/>
+     <mapping class="projetojava.App"/>
+      
+   </session-factory>
+</hibernate-configuration>
