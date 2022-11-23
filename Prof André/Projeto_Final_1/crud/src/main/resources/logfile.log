@@ -1,0 +1,5 @@
+LOGGER.trace("Your log - {}", value);
+LOGGER.debug("debug - {}", value);
+LOGGER.info("info- {}", value);
+LOGGER.warn("warn - {}", value);
+LOGGER.error("error - {}", value);
