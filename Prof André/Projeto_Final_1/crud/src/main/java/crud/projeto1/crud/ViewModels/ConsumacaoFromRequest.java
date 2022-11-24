@@ -12,6 +12,10 @@ public class ConsumacaoFromRequest {
         this.quantidade = quantidade;
     }
 
+    public ConsumacaoFromRequest(){
+
+    }
+
                                              //G and S//
     public Integer getId_item() {
         return id_item;
