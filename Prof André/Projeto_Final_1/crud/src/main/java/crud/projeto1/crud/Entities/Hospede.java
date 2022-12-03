@@ -12,6 +12,9 @@ public class Hospede {
     @Column(name = "nome_completo")
     private String Nome_Completo;
 
+    @OneToOne(mappedBy = "hospede")
+    Veiculo veiculo;
+
     public Hospede(){
 
     }
@@ -24,7 +27,14 @@ public class Hospede {
         this.id = id;
         this.Nome_Completo = nome;
     }
-                                        //GETTER and SETTER\\
+
+    public Hospede(String nome, Veiculo veiculo){
+
+        this.Nome_Completo = nome;
+        this.veiculo = veiculo;
+    }
+
+    //GETTER and SETTER\\
 
     public int getId() {
         return id;
@@ -42,6 +52,13 @@ public class Hospede {
         Nome_Completo = nome_Completo;
     }
 
+    public Veiculo getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
+    }
 
     //Info ou Logging - Metodo JAVA
     public String toString() {
