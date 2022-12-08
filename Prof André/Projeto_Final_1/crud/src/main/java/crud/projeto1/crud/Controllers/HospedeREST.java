@@ -8,6 +8,7 @@ import crud.projeto1.crud.ViewModels.HospedeFromRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,6 +31,7 @@ public class HospedeREST {
         return repositorio.findAll();
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void salvar(@RequestBody HospedeFromRequest hospedeFromRequest){
@@ -43,6 +45,7 @@ public class HospedeREST {
         log.info("Hospede cadastrado com sucesso");
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("{id}")
     public void alterar(@RequestBody Hospede hospedeFromRequest, @PathVariable int id){
 
@@ -56,6 +59,7 @@ public class HospedeREST {
         log.info("Hospede alterado com sucesso!!");
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void excluir(@PathVariable int id){
