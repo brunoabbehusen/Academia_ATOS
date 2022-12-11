@@ -22,13 +22,13 @@ public class ItemREST {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @GetMapping
-    public String listar() throws JsonProcessingException {
+    public List<Item> listar() throws JsonProcessingException {
 
-        ObjectMapper mapper = new ObjectMapper();
+
 
         log.info("Listagem de itens cadastrados");
 
-        return mapper.writeValueAsString(repositorio.findAll());
+        return repositorio.findAll();
     }
 
 

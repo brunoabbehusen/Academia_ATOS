@@ -22,6 +22,7 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
+@CrossOrigin(origins = "http://localhost:5500", allowCredentials = "true", maxAge = 3600)
 @RequestMapping("/reservas")
 public class ReservaREST {
 
@@ -36,13 +37,11 @@ public class ReservaREST {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @GetMapping
-    public String listar() throws JsonProcessingException {
+    public List<ReservaCamaId> listar() throws JsonProcessingException {
 
         List<Reserva> result_reservas = repositorio_reserva.findAll();
 
         List<ReservaCamaId> reservas_com_cama = new ArrayList<>();
-
-        ObjectMapper mapper = new ObjectMapper();
 
         //Para cada "reserva" existente na "result_reservas" ele executa uma vez
         for(Reserva reserva : result_reservas){
@@ -56,12 +55,11 @@ public class ReservaREST {
             }
 
             reservas_com_cama.add(reserva_com_cama);
-
         }
 
         log.info("Listando as reservas com camas");
 
-        return mapper.writeValueAsString(reservas_com_cama);
+        return reservas_com_cama;
     }
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @PostMapping

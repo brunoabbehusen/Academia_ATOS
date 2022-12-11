@@ -22,9 +22,9 @@ public class VeiculoREST {
     ObjectMapper mapper = new ObjectMapper();
 
     @GetMapping
-    public String listar() throws JsonProcessingException {
+    public List<Veiculo> listar() throws JsonProcessingException {
 
-        return mapper.writeValueAsString(repositorio.findAll());
+        return repositorio.findAll();
     }
 
     @PostMapping

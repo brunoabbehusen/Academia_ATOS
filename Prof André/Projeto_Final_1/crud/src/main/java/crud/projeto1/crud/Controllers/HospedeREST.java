@@ -28,11 +28,9 @@ public class HospedeREST {
     private RepositorioVeiculo repositorio_veiculo;
 
     @GetMapping
-    public String listar() throws JsonProcessingException {
+    public List<Hospede> listar() throws JsonProcessingException {
 
-        ObjectMapper mapper = new ObjectMapper();
-
-        return mapper.writeValueAsString(repositorio.findAll());
+        return repositorio.findAll();
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")

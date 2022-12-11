@@ -34,13 +34,11 @@ public class ReservaConsumoREST {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @GetMapping
-    public String listar() throws JsonProcessingException {
-
-        ObjectMapper mapper = new ObjectMapper();
+    public List<ItensConsumidos> listar() throws JsonProcessingException {
 
         log.info("Itens listados");
 
-        return mapper.writeValueAsString(repositorio_itens_consumidos.findAll());
+        return repositorio_itens_consumidos.findAll();
     }
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping

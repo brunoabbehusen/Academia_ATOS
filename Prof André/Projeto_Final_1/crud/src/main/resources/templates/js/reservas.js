@@ -6,23 +6,18 @@ function getReservas(){
     let username = 'user';
     let password = 'passwd';
 
-    let headers = new Headers();
-
-    headers.append('Authorization', 'Basic ' + btoa(username + ":" + password));
-
-    
 
     fetch('http://localhost:8008/reservas',{
         headers:{
-            'Authorization': `Basic ${btoa(username + ":" + password)}`
+            'Authorization': `Basic ${btoa(username + ":" + password)}`,
         },
-        credentials: 'include',
+        //credentials: 'include',
         method: 'GET',
-        mode: 'no-cors'
+        //mode: 'cors'
     }).then((response) => {
-        response.text().then((data)=>{
-            console.log(data);
-        })
+        return response.json();
+    }).then((data) => {
+        console.log(data);
     });
 }
 

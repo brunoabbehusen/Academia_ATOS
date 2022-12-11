@@ -27,13 +27,13 @@ public class QuartoREST {
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @GetMapping
-    public String listar() throws JsonProcessingException {
+    public List<Quarto> listar() throws JsonProcessingException {
 
-        ObjectMapper mapper = new ObjectMapper();
+
 
         log.info("Listagem de quartos cadastrados");
 
-        return mapper.writeValueAsString(repositorio.findAll());
+        return repositorio.findAll();
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
