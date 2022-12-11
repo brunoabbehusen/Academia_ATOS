@@ -1,5 +1,7 @@
 package crud.projeto1.crud.Controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import crud.projeto1.crud.Entities.Veiculo;
 import crud.projeto1.crud.Repositories.RepositorioVeiculo;
 import lombok.extern.slf4j.Slf4j;
@@ -17,11 +19,12 @@ public class VeiculoREST {
     @Autowired
     private RepositorioVeiculo repositorio;
 
+    ObjectMapper mapper = new ObjectMapper();
 
     @GetMapping
-    public List<Veiculo> listar(){
+    public String listar() throws JsonProcessingException {
 
-        return repositorio.findAll();
+        return mapper.writeValueAsString(repositorio.findAll());
     }
 
     @PostMapping

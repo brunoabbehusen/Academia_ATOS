@@ -1,5 +1,7 @@
 package crud.projeto1.crud.Controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import crud.projeto1.crud.Entities.Veiculo;
 import crud.projeto1.crud.Repositories.RepositorioHospede;
 import crud.projeto1.crud.Entities.Hospede;
@@ -26,9 +28,11 @@ public class HospedeREST {
     private RepositorioVeiculo repositorio_veiculo;
 
     @GetMapping
-    public List<Hospede> listar(){
+    public String listar() throws JsonProcessingException {
 
-        return repositorio.findAll();
+        ObjectMapper mapper = new ObjectMapper();
+
+        return mapper.writeValueAsString(repositorio.findAll());
     }
 
     @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")

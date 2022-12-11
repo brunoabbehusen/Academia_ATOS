@@ -1,7 +1,7 @@
 package crud.projeto1.crud.Controllers;
 
-
-import crud.projeto1.crud.Entities.Cama;
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import crud.projeto1.crud.Entities.Quarto;
 import crud.projeto1.crud.Repositories.RepositorioCama;
 import crud.projeto1.crud.Repositories.RepositorioQuarto;
@@ -9,11 +9,10 @@ import crud.projeto1.crud.ViewModels.QuartoFromRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 
 @Slf4j
 @RestController
@@ -26,14 +25,18 @@ public class QuartoREST {
     @Autowired
     private RepositorioCama repositorio_cama;
 
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @GetMapping
-    public List<Quarto> listar(){
+    public String listar() throws JsonProcessingException {
+
+        ObjectMapper mapper = new ObjectMapper();
 
         log.info("Listagem de quartos cadastrados");
 
-        return repositorio.findAll();
+        return mapper.writeValueAsString(repositorio.findAll());
     }
 
+    @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void salvar(@RequestBody QuartoFromRequest quartoFromRequest){

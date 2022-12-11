@@ -1,5 +1,7 @@
 package crud.projeto1.crud.Controllers;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import crud.projeto1.crud.Entities.Cama;
 import crud.projeto1.crud.Entities.Hospede;
 import crud.projeto1.crud.Repositories.RepositorioCama;
@@ -11,6 +13,7 @@ import crud.projeto1.crud.ViewModels.ReservaFromRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -31,13 +34,15 @@ public class ReservaREST {
     @Autowired
     private RepositorioHospede repositorio_hospede;
 
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @GetMapping
-    public List<ReservaCamaId> listar(){
+    public String listar() throws JsonProcessingException {
 
         List<Reserva> result_reservas = repositorio_reserva.findAll();
 
         List<ReservaCamaId> reservas_com_cama = new ArrayList<>();
 
+        ObjectMapper mapper = new ObjectMapper();
 
         //Para cada "reserva" existente na "result_reservas" ele executa uma vez
         for(Reserva reserva : result_reservas){
@@ -56,9 +61,9 @@ public class ReservaREST {
 
         log.info("Listando as reservas com camas");
 
-        return reservas_com_cama;
+        return mapper.writeValueAsString(reservas_com_cama);
     }
-
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public void salvar(@RequestBody ReservaFromRequest reserva_from_request){
@@ -84,6 +89,7 @@ public class ReservaREST {
         log.info("Salvando reserva e atualizando a cama!!");
     }
 
+    @PreAuthorize("hasAnyRole('ROLE_ADMIN','ROLE_USER')")
     @PatchMapping("/checkout/{id}")
     public void checkout(@PathVariable int id){
 
