@@ -18,6 +18,7 @@ import java.util.Optional;
 
 @Slf4j
 @RestController
+@CrossOrigin(origins = "http://localhost:5500", allowCredentials = "true", maxAge = 3600)
 @RequestMapping("/hospedes")
 public class HospedeREST {
 

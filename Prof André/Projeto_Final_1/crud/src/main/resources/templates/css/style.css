@@ -179,6 +179,22 @@ body {
     text-align: center;
 }
 
+/*Pagina de Cadastro de Hospedes*/
+
+.cadastro{
+
+    margin-top: 3rem;
+    margin-left: 3rem;
+    display: flex;
+    gap: 6rem;
+}
+
+.btn-cadastro{
+    
+    margin-left: 3rem;
+    margin-top: 3rem;
+}
+
 /*Pagina RESERVAS*/
 
 .esquerda{

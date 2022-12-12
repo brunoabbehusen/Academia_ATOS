@@ -25,9 +25,7 @@ public class WebSecurityConfiguration{
         http
                 .httpBasic()
                 .and()
-                .authorizeHttpRequests()
-                .anyRequest().authenticated()
-                .and()
+                .authorizeHttpRequests((requests) -> requests.antMatchers("/login").permitAll().anyRequest().authenticated())
                 .cors()
                 .and()
                 .csrf().disable();
@@ -46,7 +44,7 @@ public class WebSecurityConfiguration{
 
         configuration.setAllowedOrigins(Arrays.asList("*"));
                 configuration.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","PATCH","OPTIONS"));
-                configuration.setAllowedHeaders(Arrays.asList("Authorization"));
+                configuration.setAllowedHeaders(Arrays.asList("Authorization", "Content-Type"));
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
