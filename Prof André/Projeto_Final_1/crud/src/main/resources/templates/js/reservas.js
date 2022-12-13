@@ -1,8 +1,7 @@
 const listaDeReservasEL = document.querySelector('#listaDeReservas');
 let Reservas = [];
 let ReservaIdSelecionado;
-const username = 'user';
-const password = 'passwd';
+
 document.querySelector('#btn-checkout').addEventListener('click', checkout);
 
 
@@ -10,7 +9,7 @@ function getReservas(){
 
     fetch('http://localhost:8008/reservas',{
         headers:{
-            'Authorization': `Basic ${btoa(username + ":" + password)}`,
+            'Authorization': `Basic ${btoa(credentials.username + ":" + credentials.password)}`,
         },
         method: 'GET',
     }).then((response) => {
@@ -76,18 +75,18 @@ function setItensConsumidos(itensConsumidos){
             <li class="row g-3">
                 <div class="col-4">
                     <label class="form-label" for="itemConsumido">Item consumido</label>
-                    <input class="form-control" type="text" value="${itemConsumido.item.nome}">
+                    <input class="form-control" type="text" value="${itemConsumido.item.nome}" readonly>
                 </div>
             <div class="col-4">
                 <label class="form-label" for="valorUnitario">Valor Unitário</label>
                     <div class="input-group">
                         <span class="input-group-text">R$</span>
-                        <input type="text" class="form-control" value="${itemConsumido.item.valor}">
+                        <input type="text" class="form-control" value="${itemConsumido.item.valor}" readonly>
                     </div>
             </div>
             <div class="col-4">
                 <label class="form-label" for="quantidadeConsumida">Quantidade Consumida</label>
-                <input type="number" class="form-control" value="${itemConsumido.quantidade}">
+                <input type="number" class="form-control" value="${itemConsumido.quantidade}" readonly>
             </div>
         </li>
         `;
@@ -100,7 +99,7 @@ function checkout(){
 
     fetch(`http://localhost:8008/reservas/checkout/${ReservaIdSelecionado}`, {
         headers:{
-            'Authorization': `Basic ${btoa(username + ":" + password)}`,
+            'Authorization': `Basic ${btoa(credentials.username + ":" + credentials.password)}`,
         },
         method: 'PATCH',
     });
