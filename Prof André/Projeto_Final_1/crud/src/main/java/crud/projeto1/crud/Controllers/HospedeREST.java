@@ -1,7 +1,6 @@
 package crud.projeto1.crud.Controllers;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import crud.projeto1.crud.Entities.Veiculo;
 import crud.projeto1.crud.Repositories.RepositorioHospede;
 import crud.projeto1.crud.Entities.Hospede;
@@ -10,6 +9,7 @@ import crud.projeto1.crud.ViewModels.HospedeFromRequest;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,7 +39,7 @@ public class HospedeREST {
     @ResponseStatus(HttpStatus.CREATED)
     public void salvar(@RequestBody HospedeFromRequest hospedeFromRequest){
 
-        Hospede hospede = new Hospede(hospedeFromRequest.getNome_Completo());
+        Hospede hospede = new Hospede(hospedeFromRequest.getNomeCompleto());
         repositorio.save(hospede);
 
         Veiculo veiculo = new Veiculo(hospedeFromRequest.getPlaca(), hospede);
@@ -50,34 +50,57 @@ public class HospedeREST {
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @PutMapping("{id}")
-    public void alterar(@RequestBody Hospede hospedeFromRequest, @PathVariable int id){
-
-        Hospede hospede = new Hospede(hospedeFromRequest.getNome_Completo(), id);
+    public ResponseEntity<String> alterar(@RequestBody HospedeFromRequest hospedeFromRequest, @PathVariable int id){
 
         Optional<Hospede> result = repositorio.findById(id);
-        if(result.isPresent()){
-            repositorio.save(hospede);
+
+        if(result.isEmpty()){
+            return new ResponseEntity<>("Hóspede não encontrado", HttpStatus.NOT_FOUND);
+        }
+        
+        Hospede hospede = result.get();
+
+        hospede.setNome_Completo(hospedeFromRequest.getNomeCompleto());
+
+        String novaPlaca = hospedeFromRequest.getPlaca();
+
+        if ( novaPlaca != null ) {
+            Veiculo veiculo = hospede.getVeiculo();
+
+            if( veiculo != null ) {
+                veiculo.setPlaca(novaPlaca);
+            } else {
+                Veiculo novoVeiculo = new Veiculo(novaPlaca, hospede);
+
+                hospede.setVeiculo(novoVeiculo);
+            }
         }
 
-        log.info("Hospede alterado com sucesso!!");
+        repositorio.save(hospede);
+
+        log.info("Hóspede alterado com sucesso!!");
+
+        return new ResponseEntity<>("Hóspede alterado com sucesso!!", HttpStatus.OK);
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     @DeleteMapping("{id}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public void excluir(@PathVariable int id){
+    public ResponseEntity<String> excluir(@PathVariable int id){
 
         Optional<Hospede> hospede_optional = repositorio.findById(id);
-        if(hospede_optional.isEmpty()) return;
+
+        if(hospede_optional.isEmpty()) return new ResponseEntity<>("Hóspede não encontrado", HttpStatus.NOT_FOUND);
 
         Hospede hospede = hospede_optional.get();
 
         if(hospede.getVeiculo() != null){
-
             repositorio_veiculo.deleteById(hospede.getVeiculo().getId());
         }
 
         repositorio.deleteById(id);
         log.info("Hospede deletado com sucesso!!");
+
+        return new ResponseEntity<>("Hóspede deletado com sucesso!!", HttpStatus.OK);
     }
 }

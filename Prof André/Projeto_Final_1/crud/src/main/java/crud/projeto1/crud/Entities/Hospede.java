@@ -12,8 +12,12 @@ public class Hospede {
     @Column(name = "nome_completo")
     private String Nome_Completo;
 
-    @OneToOne(mappedBy = "hospede")
+    @OneToOne(mappedBy = "hospede", cascade = CascadeType.ALL)
     Veiculo veiculo;
+
+    @JoinColumn(name = "Reserva_Id", referencedColumnName = "id")
+    @OneToOne(cascade = CascadeType.ALL)
+    Reserva reserva;
 
     public Hospede(){
 
@@ -32,6 +36,18 @@ public class Hospede {
 
         this.Nome_Completo = nome;
         this.veiculo = veiculo;
+    }
+
+    public Hospede(String nome, int id, String placa){
+
+        this.Nome_Completo = nome;
+        this.id = id;
+        this.veiculo.setPlaca(placa);
+    }
+
+    public void setReserva(Reserva reserva) {
+
+        this.reserva = reserva;
     }
 
     //GETTER and SETTER\\
@@ -65,4 +81,6 @@ public class Hospede {
 
         return "idHospede = " + id + " Nome_Completo = " + Nome_Completo;
     }
+
+
 }

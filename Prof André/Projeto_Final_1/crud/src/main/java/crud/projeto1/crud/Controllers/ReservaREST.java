@@ -70,11 +70,11 @@ public class ReservaREST {
 
         if(hospede_optional.isEmpty()) return;
 
+        Hospede hospede = hospede_optional.get();
+
         List<Cama> cama_list = repositorio_cama.find_free_beds_by_type(reserva_from_request.getTipo_cama());
 
         if(cama_list.isEmpty()) return;
-
-        Hospede hospede = hospede_optional.get();
 
         Cama cama = cama_list.get(0);
 
@@ -83,6 +83,10 @@ public class ReservaREST {
         Reserva reserva_salva = repositorio_reserva.save(reserva);
 
         repositorio_cama.update_bed_reservation(reserva_salva, cama.getId());
+
+        hospede.setReserva(reserva);
+
+        repositorio_hospede.save(hospede);
 
         log.info("Salvando reserva e atualizando a cama!!");
     }

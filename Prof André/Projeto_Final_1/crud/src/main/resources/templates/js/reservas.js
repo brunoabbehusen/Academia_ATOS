@@ -15,7 +15,6 @@ function getReservas(){
     }).then((response) => {
         return response.json();
     }).then((data) => {
-        console.log(data);
         setReservas(data);
     });
 }
@@ -34,7 +33,7 @@ function setReservas(reservas){
             <tr onclick="selectReserva(${reserva.reserva.id})">
                 <th scope="row">${reserva.reserva.id}</th>
                 <td>${reserva.reserva.hospede.nome_Completo}</td>
-                <td>${reserva.reserva.hospede.veiculo.placa}</td>
+                <td>${reserva.reserva.hospede.veiculo == null? "Sem veiculo":reserva.reserva.hospede.veiculo.placa}</td>
                 <td>${reserva.cama_id == null? "Sem cama":reserva.cama_id}</td>
             </tr>
         `;
@@ -102,9 +101,9 @@ function checkout(){
             'Authorization': `Basic ${btoa(credentials.username + ":" + credentials.password)}`,
         },
         method: 'PATCH',
+    }).then(data => {
+        window.location.href = window.location.href;
     });
-    
-    window.location.reload();
 }
 
 getReservas();
