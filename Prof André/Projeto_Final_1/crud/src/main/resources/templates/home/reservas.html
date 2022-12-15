@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org/">
+<html lang="pt-BR" class="h-100vh" xmlns:th="http://www.thymeleaf.org/">
 
 <head>
   <meta charset="UTF-8">
@@ -55,11 +55,14 @@
               </ul>
             </li>
           </ul>
+          <div>
+            <a class="btn btn-outline-danger" href="./login.html">Sair</a>
+          </div>
         </div>
       </div>
     </nav>
   </header>
-  <div class="d-flex gap-5">
+  <main class="d-flex gap-5 h-100">
     <section class="esquerda">
       <h1 class="mb-3">Hóspedes</h1>
       <table class="table table-hover">
@@ -131,7 +134,7 @@
         </button>
       </div>
     </section>
-  </div>
+  </main>
 
   <footer class="rodape">Todos os diretos reservados - 2022 &copy;</footer>
 </body>

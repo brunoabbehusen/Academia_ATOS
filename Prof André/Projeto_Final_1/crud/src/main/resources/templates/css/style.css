@@ -110,6 +110,7 @@ body {
     width: 100%;
     padding: 30px;
     position: relative;
+    flex: 1;
 }
 
 .wm{
@@ -124,6 +125,7 @@ body {
     padding: 2% 2%;
     margin: 0 auto;
     margin-top: 11rem;
+    margin-bottom: 5.5rem;
 }
 
 .clear{clear: both;}
@@ -159,9 +161,12 @@ body {
     color: #fff;
     border-radius: 10px;
     border: 3px solid #4f2cec;
-    padding: 15px;
+    padding-inline: 7rem;
+    padding-block: 1rem;
     font-weight: bold;
     text-align: center;
+    text-decoration: none;
+    font-size: 1.2rem;
 }
 
 .homebtn:hover{
@@ -222,4 +227,14 @@ body {
         margin: 30px 20px;
         padding: 40px 15px 15px 15px;
     }
+}
+/*--------------------*/
+.h-100vh{
+
+    height: 100vh;
+}
+
+.h-100{
+
+    height: 100%;
 }
